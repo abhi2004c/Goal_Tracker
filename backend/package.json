@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@prisma/client": "^5.0.0",
+    "@prisma/client": "^5.22.0",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@vitest/coverage-v8": "^1.0.0",
     "nodemon": "^3.1.11",
-    "prisma": "^5.0.0",
+    "prisma": "^5.22.0",
     "supertest": "^6.3.0",
     "vitest": "^1.0.0"
   },

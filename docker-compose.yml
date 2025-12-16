@@ -23,7 +23,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     environment:
-      DATABASE_URL: postgresql://focusflow_db_ts8s_user:PJvly2rskcDpLhJapRN4OcXQQJSdGRZJ@dpg-d50gg3p5pdvs7392ug7g-a/focusflow_db_ts8s
+      DATABASE_URL: postgresql://focusflow:focusflow123@postgres:5432/focusflow
       NODE_ENV: development
       PORT: 5000
       FRONTEND_URL: http://localhost:5173
