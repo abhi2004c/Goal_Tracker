@@ -181,6 +181,7 @@ MIT License - see [LICENSE](LICENSE)
 ## 👤 Author
 
 **Abhi** - [@abhi2004c](https://github.com/abhi2004c)
+**Sangam** - [@Sangam44957](https://github.com/Sangam44957)
 
 ## 🤝 Contributing
 
@@ -194,5 +195,5 @@ MIT License - see [LICENSE](LICENSE)
 
 ---
 
-**Live Demo**: [Coming Soon]
+**Live Demo**: Coming Soon
 **Documentation**: [API Docs](docs/api.md)
