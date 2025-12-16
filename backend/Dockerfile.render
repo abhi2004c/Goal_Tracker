@@ -7,6 +7,9 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
+# Set environment variable to force correct engine
+ENV PRISMA_CLI_BINARY_TARGETS=debian-openssl-1.1.x
+
 WORKDIR /app
 
 # Copy package files
@@ -16,8 +19,9 @@ COPY prisma ./prisma/
 # Install dependencies
 RUN npm install
 
-# Generate Prisma client with correct binary target
-RUN npx prisma generate
+# Clean and regenerate Prisma client
+RUN rm -rf node_modules/.prisma
+RUN npx prisma generate --generator client
 
 # Copy source code
 COPY . .
