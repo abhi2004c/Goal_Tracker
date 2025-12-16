@@ -2,11 +2,11 @@
 services:
   - type: web
     name: focusflow-api
-    env: node
+    env: docker
     region: oregon
     plan: free
-    buildCommand: apt-get update && apt-get install -y openssl && cd backend && npm install && npx prisma generate && npx prisma db push
-    startCommand: cd backend && npm start
+    dockerfilePath: ./backend/Dockerfile.render
+    dockerContext: ./backend
     # amazonq-ignore-next-line
     envVars:
       - key: NODE_ENV
