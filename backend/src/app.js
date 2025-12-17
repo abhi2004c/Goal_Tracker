@@ -14,7 +14,7 @@ const app = express();
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: [config.frontendUrl, 'https://focusflow-drab.vercel.app', 'http://localhost:3000'],
+  origin: [config.frontendUrl, 'https://focusflow-y3z1kn160-abhi2004cs-projects.vercel.app', 'http://localhost:3000'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
