@@ -180,7 +180,8 @@ MIT License - see [LICENSE](LICENSE)
 
 ## 👤 Author
 
-**Abhi** - [@abhi2004c](https://github.com/abhi2004c)
+**Abhinandan** - [@abhi2004c](https://github.com/abhi2004c)  
+
 **Sanagam** - [@Sangam44957](https://github.com/Sangam44957)
 
 ## 🤝 Contributing
@@ -195,5 +196,6 @@ MIT License - see [LICENSE](LICENSE)
 
 ---
 
-**Live Demo**: [[Website](https://focusflow-drab.vercel.app/)]
+**Live Demo**: [[Website](https://focusflow-drab.vercel.app/)]  
+
 **Documentation**: [API Docs](docs/api.md)
