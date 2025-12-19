@@ -2,7 +2,7 @@
 
 > AI-Powered Goal & Task Tracker SaaS
 
-[![CI/CD](https://github.com/abhi2004c/Goal_Tracker/actions/workflows/deploy.yml/badge.svg)](https://github.com/abhi2004c/Goal_Tracker/actions)
+[![CI/CD](https://github.com/Sangam44-tech/focusflow/actions/workflows/deploy.yml/badge.svg)](https://github.com/Sangam44-tech/focusflow/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📖 Overview
@@ -45,7 +45,7 @@ FocusFlow is a modern, full-stack productivity application that combines traditi
 
 ```bash
 # Clone repository
-git clone https://github.com/abhi2004c/Goal_Tracker.git
+git clone https://github.com/Sangam44-tech/focusflow.git
 cd focusflow
 
 # Backend setup
@@ -180,8 +180,7 @@ MIT License - see [LICENSE](LICENSE)
 
 ## 👤 Author
 
-**Abhinandan** - [@abhi2004c](https://github.com/abhi2004c)  
-**Sangam** - [@Sangam44957](https://github.com/Sangam44957)
+**Sangam** - [@Sangam44-tech](https://github.com/Sangam44-tech)
 
 ## 🤝 Contributing
 
@@ -195,5 +194,5 @@ MIT License - see [LICENSE](LICENSE)
 
 ---
 
-**Live Demo**: [[Website](https://focusflow-drab.vercel.app/)]  
+**Live Demo**: [Coming Soon]
 **Documentation**: [API Docs](docs/api.md)

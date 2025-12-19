@@ -9,7 +9,6 @@ export const Profile = () => {
   const { user, updateUser } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     currentPassword: '',
     newPassword: '',
     confirmPassword: ''
@@ -21,7 +20,6 @@ export const Profile = () => {
     if (user) {
       setFormData({
         name: user.name || '',
-        email: user.email || '',
         currentPassword: '',
         newPassword: '',
         confirmPassword: ''
@@ -98,18 +96,27 @@ export const Profile = () => {
 
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
+    
+    // Validate name is not empty
+    if (!formData.name.trim()) {
+      toast.error('Name cannot be empty');
+      return;
+    }
+    
     setLoading(true);
 
     try {
+      // Only send name - email is not editable
       const updateData = {
-        name: formData.name,
-        email: formData.email
+        name: formData.name.trim()
       };
 
       const response = await api.put('/auth/profile', updateData);
+      
       updateUser(response.data.data);
       toast.success('Profile updated successfully!');
     } catch (error) {
+      
       toast.error(error.response?.data?.message || 'Failed to update profile');
     } finally {
       setLoading(false);
@@ -119,8 +126,18 @@ export const Profile = () => {
   const handleChangePassword = async (e) => {
     e.preventDefault();
     
+    if (!formData.currentPassword || !formData.newPassword) {
+      toast.error('Both current and new passwords are required');
+      return;
+    }
+    
     if (formData.newPassword !== formData.confirmPassword) {
       toast.error('New passwords do not match');
+      return;
+    }
+
+    if (formData.newPassword.length < 8) {
+      toast.error('New password must be at least 8 characters long');
       return;
     }
 
@@ -203,15 +220,20 @@ export const Profile = () => {
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Email Address
+                    <span className="ml-2 text-xs font-normal text-gray-400">(Cannot be changed)</span>
                   </label>
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="input"
-                    placeholder="Enter your email"
+                    value={user?.email || ''}
+                    disabled
+                    readOnly
+                    className="input bg-gray-50 text-gray-500 cursor-not-allowed border-gray-200"
+                    placeholder="Your email address"
                   />
+                  <p className="mt-1 text-xs text-gray-400">
+                    Contact support if you need to change your email
+                  </p>
                 </div>
               </div>
 

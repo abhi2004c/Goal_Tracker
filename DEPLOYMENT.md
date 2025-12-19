@@ -20,7 +20,7 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/abhi2004c/Goal_Tracker.git
+git clone https://github.com/Sangam44-tech/focusflow.git
 cd focusflow
 
 # Run with Docker Compose

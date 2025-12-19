@@ -2,22 +2,31 @@
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import { config } from './config/env.js';
 import { errorHandler } from './middlewares/errorHandler.middleware.js';
 import { generalLimiter } from './middlewares/rateLimiter.middleware.js';
+import { optimizeResponse } from './middlewares/optimize.middleware.js';
 import routes from './routes/index.js';
 import subscriptionRoutes from './routes/subscription.routes.js';
 
 const app = express();
 
+// Compression middleware (must be first for maximum effect)
+app.use(compression());
+
+// Response optimization
+app.use(optimizeResponse);
+
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: [config.frontendUrl, 'https://focusflow-y3z1kn160-abhi2004cs-projects.vercel.app', 'http://localhost:3000'],
+  origin: [config.frontendUrl, 'https://focusflow-drab.vercel.app', 'http://localhost:3000'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  maxAge: 86400  // Cache preflight for 24 hours (eliminates 300-400ms per request)
 }));
 
 // Stripe webhook needs raw body (before json parser)

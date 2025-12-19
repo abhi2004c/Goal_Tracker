@@ -1,10 +1,8 @@
 // backend/prisma/schema.prisma
 
 generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native", "debian-openssl-3.0.x"]
+  provider = "prisma-client-js"
 }
-
 
 datasource db {
   provider = "postgresql"
@@ -85,6 +83,9 @@ model Project {
   tasks       Task[]
   
   @@index([userId])
+  @@index([status])
+  @@index([userId, status])
+  @@index([createdAt])
   @@map("projects")
 }
 
@@ -124,6 +125,8 @@ model Task {
   
   @@index([projectId])
   @@index([status])
+  @@index([projectId, status])
+  @@index([dueDate])
   @@map("tasks")
 }
 

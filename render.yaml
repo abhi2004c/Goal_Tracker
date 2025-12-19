@@ -21,8 +21,6 @@ services:
         generateValue: true
       - key: FRONTEND_URL
         value: https://focusflow.vercel.app
-      - key: PRISMA_CLI_BINARY_TARGETS
-        value: linux-musl-openssl-3.0.x
 
 databases:
   - name: focusflow-db

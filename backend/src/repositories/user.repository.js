@@ -60,8 +60,8 @@ export const userRepository = {
     return prisma.user.update({
       where: { id },
       data: {
-        name: data.name,
-        email: data.email
+        name: data.name
+        // Email is NOT included - cannot be changed
       },
       include: { subscription: true }
     });
